@@ -15,6 +15,7 @@ load_dotenv(find_dotenv())
 
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 DATABASE_URL = os.environ.get("DATABASE_URL")
+NOTIFICATION_SCOPE = os.environ.get("NOTIFICATION_SCOPE")
 
 urllib.parse.uses_netloc.append("mysql")
 url = urllib.parse.urlparse(DATABASE_URL)
@@ -32,7 +33,7 @@ cursor.execute("CREATE TABLE IF NOT EXISTS updates(id serial PRIMARY KEY, title 
 conn.commit()
 
 def post_to_slack(tittel, url, r):
-    payload = u'Noe nytt har skjedd på SKAM: <' + url + '|'+tittel+'>'
+    payload = u'Noe nytt har skjedd på SKAM: <' + url + '|'+tittel+'> ' +NOTIFICATION_SCOPE
     slack_data = {'text': payload}
     response = r.post(
         WEBHOOK_URL, data=json.dumps(slack_data),
