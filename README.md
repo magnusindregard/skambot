@@ -16,7 +16,7 @@ Om du er admin, eller har tilgang til team-instillingene i Slack, kan du sette o
 
 Skambot kan kjøres lokalt, men da må du finne ut hvordan du lagrer titlene selv (f.eks med en sqlite-database, eller en flatfil). Vi kjører skambot i skyen på Heroku. Den fungerer godt på en gratis dyno og siden scriptet kjører i maks et par sekunder, vil den ikke stjele særlig av gratistiden på kontoen.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/netliferesearch/skambot/tree/master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/magnusindregard/skambot/tree/master)
 
 Det kan være en fordel å sette *Runtime Selection* til Europe.
 
